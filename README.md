@@ -1,2 +1,0 @@
-# Ozidi2
-# OzidiLive
