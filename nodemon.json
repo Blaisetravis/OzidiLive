@@ -1,0 +1,6 @@
+{
+    "watch": ["server.js"],
+    "ignore": ["node_modules/", "logs/**", "assets/**"],
+    "ext": "js,json"
+  }
+  

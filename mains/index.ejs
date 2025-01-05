@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#252525">
+    <title>Ozidi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="movies-page.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="Iconapp.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="hamburger-menu" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="applogo" id="app-logo">
+                <button id="home-button">Ozidi</button>
+            </div>
+            <button class="profile-icon">
+                <a href="/account">
+                    <button class="profile-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </button>
+                </a>
+                
+        </div>
+    </nav>
+    
+    <div class="MAIN-CONTAINER">
+        <div class="main-menu">
+            <a href="#" class="nav--buttons" id="home">
+                <i class="fa-solid fa-house"></i>Home</a>
+            <a href="#" class="nav--buttons" id="movies">
+                <i class="fa-solid fa-film"></i>Movies</a>
+            <a href="#" class="nav--buttons" id="tv-shows">
+                <i class="fa-solid fa-tv"></i>Tv-Shows</a>
+            
+            <div class="search-container">
+                <form id="search-form" class="search-bar">
+                    <input type="text" name="search" id="search-bar-input" placeholder="Search">
+                </form>
+            </div>
+        </div>
+
+
+        <div class="right-container">
+            <div class="top-movie-slideshow">
+                <div class="popular-movie-slideshow" id="popular-movie-slideshow">
+                    <h4 id="watch-now-title">Home</h4>
+                    <!--popular movies go here slide show only-->   
+                </div>
+                
+            </div>
+
+            <div class="trending-tv-shows" id="trending-tv-shows">
+                <div id="tv-show-logo"></div>
+
+                <!-- whats popular tv shows -->
+            </div>
+
+            
+            <div class="top-rated-movies" id="top-rated-movies">
+                <div id="movie-logo"></div>
+                <!-- whats popular tv shows -->
+            </div>
+
+            <div class="blockbuster-movies" id="blockbuster-action-movies">
+                <div id="movie-logo"></div>
+                <!-- other elements if necessary -->
+            </div>
+
+            <div class="trending-animes" id="trending-animes">
+                <div id="tv-show-logo"></div>
+                <!-- other elements if necessary -->
+            </div>
+            
+
+
+
+            
+
+
+            <div class="media-main-container">
+                <div class="media-display-container" id="media-display-container">
+
+                    <!--every movie clicked will show up here-->
+                </div>
+
+            </div>
+
+        </div>
+
+
+        
+
+
+
+        
+    </div>
+
+    
+
+
+    
+    <div class="trailer-div">
+        
+        <button class="close-button" id="close-button">X</button>
+        <div class="youtube-style-blockers">
+            <div class="top-bar"></div>
+            <div class="bottom-bar"></div>
+        </div>
+        <iframe src="" frameborder="0" id="trailer-player" class="trailer-window">
+
+        </iframe>
+    </div>
+    <div class="player" id="player-container" style="display: none;">
+        <button class="media-closer" id="media-closer">X</button>
+        <iframe src="" id="media-player" frameborder="0"></iframe>
+    </div>
+    
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#page-logo img {
+    width: 120px;
+    height: auto;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.register-title h1 {
+    margin: 0;
+    font-size: clamp(3rem, 10vw, 6rem);
+}
+
+.register-title h3 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 100;
+}
+
+.form-wrapper {
+    position: relative;
+    width: 25%; /* Default for large screens */
+}
+
+.email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+::placeholder {
+    font-size: 15px;
+    color: rgb(86, 86, 86);
+}
+
+#name, #E-Mail, #Password {
+    border: none;
+    background-color: rgb(240, 240, 240);
+    height: 45px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+#register-button {
+    height: 45px;
+    border: none;
+    width: 100%;
+    background: linear-gradient(to bottom, #0d7ad3, #4b90e3);
+    color: white;
+    font-size: 15px;
+    border-radius: 6px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+#register-button:hover {
+    background: linear-gradient(to bottom, #0a71c4, #3c7bc9);
+}
+
+#login {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-direction: row;
+}
+
+a {
+    color: rgb(153, 153, 153);
+}
+
+input, textarea, select {
+    font-size: 16px; 
+}
+
+
+/* Media Queries in Descending Order */
+
+@media (max-width: 1200px) {
+    .form-wrapper {
+        width: 65%; /* Large tablets or small desktops */
+    }
+}
+
+@media (max-width: 900px) {
+    .form-wrapper {
+        width: 60%; /* Medium tablets */
+    }
+}
+
+@media (max-width: 700px) {
+    .form-wrapper {
+        width: 80%; /* Small tablets and larger phones */
+    }
+}
+
+@media (max-width: 500px) {
+    .form-wrapper {
+        width: 95%; /* Small phones */
+    }
+}

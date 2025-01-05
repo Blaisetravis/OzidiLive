@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="login.css">
+
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+
+
+
+
+
+<div class="page-container">
+
+
+    <div id="page-logo">
+        <div id="page-logo-container">
+            <img src="Page logo.png" alt="" id="ozidi-logo">
+        </div>
+    </div>
+
+
+    <div id="login-title">
+        <div id="page-tagline">
+            <h3>enter your Ozidi email and password.</h3>
+        </div>
+    </div>
+
+    <div class="form-wrapper">
+        <form action="/login" method="POST" class="email-form">
+                <input type="email" name="email" id="E-Mail"
+                required placeholder="E-Mail">
+    
+                <input type="password" name="password" id="Password" placeholder="Password"
+                required>
+    
+            <button type="submit" id="login-button">Login</button>
+    
+        </form>
+    </div>
+
+    <div id="register"> 
+        <p>Don't have an account?</p>
+        <div id="register-link">
+            <a href="/register">Register</a>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,1388 @@
+
+
+
+
+
+body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family:Helvetica, sans-serif;
+    color:#e7e7e7;
+    background-color: #1e1e1e;
+}
+
+@media (min-width: 800px) {
+    .body{
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+    
+
+}
+
+
+/* Original layout for larger screens */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #000000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(40px);
+    padding-bottom: 10px;
+    height: 35px;
+    color: rgb(125, 125, 125);
+    gap: 6px;
+    position: fixed;
+    width: 100vw;
+    padding-top: 5px;
+    z-index: 1000;
+    padding-left: 4px;
+}
+
+.applogo {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#home-button {
+    background: none;
+    border: none;
+    color: #c6c6c6;
+    font-weight: 500;
+    font-size: x-large;
+}
+
+.profile-icon {
+    padding-left: 20px;
+    padding-right: 20px;
+    background: none;
+    border: none;
+    color: #c6c6c6;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.search-container {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: 30px;
+    flex: 1; 
+}
+
+
+#search-bar-input {
+    flex: 1; 
+    min-width: 180px; 
+    height: 100%;
+    background-color: #8d8d8d1c;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+@media (max-width: 670px) {
+    .navbar {
+        flex-direction: row; 
+        align-items: center; 
+        padding-top: 10px;
+        padding-bottom: 6px;
+        justify-content: space-between;
+        height: 45px;
+        background: rgb(0, 0, 0);
+        backdrop-filter: blur(80px);
+    }
+
+    .search-container {
+        width: 100%; 
+        margin: 10px 0; 
+    }
+
+
+    .search-bar {
+        width: 100%; 
+        max-width: 100%; 
+        margin: 0 20px; 
+    }
+
+    #search-bar-input {
+        min-width: 100%; 
+        max-width: 100%; 
+        font-size: 16px;
+    }
+
+    #app-logo{
+        display: none;
+    }
+    
+}
+
+
+
+/* Main Menu Left side */
+
+.main-menu {
+    height: 100%;
+    width: 230px;
+    min-width: 220px;
+    top: 51px; 
+    left: 0; 
+    z-index: 900; 
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    background-color: black; /* Overridden by previous line */
+    border-right: 1px black solid;
+    position: fixed;
+}
+
+.nav--buttons{
+    width: 88%;
+    min-width: 50px;
+    height: 30px;
+    background: none;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 300;
+    display: flex;
+    gap: 7px;
+}
+
+.nav--buttons:hover{
+    background-color: rgba(246, 246, 246, 0.081);
+}
+
+
+.hamburger-menu {
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.right-container {
+    position: relative;
+    overflow-x: hidden;
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    margin-left: 230px; /* Push right-container to the right to accommodate the main menu */
+    width: calc(100% - 230px); /* Adjust width based on the main menu */
+}
+
+.hamburger-menu .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #c6c6c6;
+    margin: 3px 0;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+
+/* Adjust styles for smaller screens */
+/* Styles for screens 800px and below */
+@media (max-width: 800px) {
+    .nav--buttons {
+        display: flex; 
+    }
+    .hamburger-menu {
+        display: flex; 
+    }
+    .main-menu {
+        display: none;  /* Hide the main menu */
+        width: 100%;        /* Collapse the width */
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .main-menu.active{
+        display: flex;
+    }
+
+    .right-container {
+        width: 100%;     /* Take up the full width */
+        position: relative;
+        overflow-x: hidden;
+        background-color: #ffffff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow-y: scroll;
+        margin-left: 0;   /* Remove the left margin */
+    }
+
+
+    #app-logo{
+        display: none;
+    }
+
+    .search-container {
+        width: 80%; 
+        margin: 10px 0; 
+    }
+
+
+    .search-bar {
+        width: 80%; 
+        max-width: 100%; 
+        margin: 0 20px; 
+    }
+
+    #search-bar-input {
+        min-width: 100%; 
+        max-width: 100%; 
+        font-size: 16px;
+    }
+}
+
+
+.menu-open .nav--buttons{
+    display: flex;
+}
+
+.menu-open .hamburger-menu{
+    display: none;
+}
+
+.MAIN-CONTAINER{
+    position: relative;
+    top: 50px;
+    display: flex;
+    background-color: rgb(39, 39, 39);
+    overflow-y: scroll;
+}
+
+
+
+
+
+@media (max-width:1750px ){
+    
+
+    .MAIN-CONTAINER{
+        position: relative;
+        top: 50px;
+        height: 100vh;
+        display: flex;
+        background-color: rgb(74, 74, 74);
+        overflow-y: hidden;
+    }
+
+}
+/*popular movies slide show*/
+
+/* watch now title*/
+
+#watch-now-title{
+    position: absolute;
+    z-index: 5;
+    left: 3%;
+    font-size: 30px;
+    top: 30px;
+
+}
+
+@media (max-width: 1750px) {
+    #watch-now-title{
+        position: absolute;
+        z-index: 5;
+        left: 3%;
+        font-size: 30px;
+        top: 30px;
+        display: block;
+    
+    }
+    
+}
+
+/* Ensure the container takes up the full width and height of the viewport */
+.top-movie-slideshow{
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 60%;
+}
+#popular-movie-slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative; /* Allows absolutely positioned children */
+    background-color: rgb(255, 255, 255);
+}
+
+/* Style the container holding the backdrops */
+.backdrop-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    position: relative;
+}
+
+/* Style individual backdrop items */
+.backdrop-item {
+    width: 100%;
+    height: 100%;
+    background-size: cover; 
+    background-position: center; 
+    top: px;
+    left: 0;
+    position: relative;
+}
+
+
+@media (max-width: 1750px){
+    #popular-movie-slideshow{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .backdrop-container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+        position: relative;
+    }
+    .backdrop-item{
+        position: absolute; /* Stack items on top of each other */
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        top: 0;
+        left: 0;
+    }
+    
+
+
+
+
+
+}
+
+
+
+button {
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Button padding */
+    cursor: pointer; /* Pointer cursor on hover */
+    background: none;
+    border: none;
+}
+
+
+.button-container {
+    position: absolute;
+    bottom: 50%; /* Positioning for buttons */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20; /* Ensure buttons are above the movie link */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+@media (max-width: 1750px){
+
+
+    button {
+        border-radius: 5px; /* Rounded corners */
+        padding: 10px 0px; /* Button padding */
+        cursor: pointer; /* Pointer cursor on hover */
+        background: none;
+        border: none;
+    }
+
+
+    .button-container {
+        position: absolute;
+        bottom: 50%; /* Positioning for buttons */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 20; /* Ensure buttons are above the movie link */
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 0px;
+    }
+
+}
+
+
+.movie-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 10;
+    cursor: pointer;
+}
+
+
+.movie-details{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 3%;
+    box-sizing: border-box;
+    padding: 0px 40px;
+
+}
+
+.movie-description{
+    width: 30%;
+}
+.Movie-logo{
+    width: 30%;
+    height: auto;
+}
+
+.Movie-logo img{
+    max-width: 200px;
+    height: auto;
+}
+
+
+/* GENRE STYING*/
+
+#movie-genre {
+    
+font-weight: 600;
+}
+
+
+/* LOGOS AND MOVIE DETAILS MOBILE*/
+
+
+@media (max-width: 1750px){
+
+    .Movie-logo img{
+        max-width: 170px;
+        height: auto;
+    }
+    
+    .movie-description{
+        font-size: medium;
+        overflow: hidden;             
+        text-overflow: ellipsis;      
+        display: -webkit-box;         
+        -webkit-box-orient: vertical; 
+        -webkit-line-clamp: 3;        
+        line-height: 1;             
+        width: 50%;
+        max-width: 90%;               
+        word-wrap: break-word;      
+        margin: 0;
+        }
+
+    .movie-details{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        position: absolute;
+        box-sizing: border-box;
+        padding: 0px 10px;
+    
+    }
+
+    .movie-genre{
+    border: none;
+    margin: 0;
+    }
+
+    .media-display-container{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        overflow-y: auto;
+        height: auto;
+        overflow: auto;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        }
+
+}
+
+
+
+
+
+/* for movies and tv shows that have been clicked display*/
+
+.media-detail-holder{
+    height: 100%;
+    
+}
+
+#media-backdrop {
+    width: 100%; /* Full width of the container or set specific dimensions */
+    height: 100%; /* Full height of the container or set specific dimensions */
+    position: relative; /* Ensure positioning context if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#backdrop-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* or 'contain' based on your needs */
+}
+
+
+.media-content-details p{
+    overflow: hidden;             
+    text-overflow: ellipsis;      
+    display: -webkit-box;         
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: 3;        
+    line-height: 1;             
+}
+.media-header-content-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 4%;
+    gap: 3%;
+    align-items: center;
+    position: absolute;
+    bottom: 0%;
+    margin-bottom: 13px;
+
+}
+
+
+.media-detail-content{
+    height: 100%;
+    position: relative;
+}
+.media-display-container{
+display: flex;
+position: relative;
+flex-direction: column;
+overflow-y: scroll;
+height: 100%;
+overflow: auto;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+}
+
+.media-display-container img{
+    width: 100%;
+    height: auto;
+
+
+}
+
+.media-detail-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+
+.play-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    width: auto;
+
+}
+
+#film-title{
+    position: absolute;
+}
+
+
+/* CAST ACTOR NAME B0X  */
+.cast-short p{
+    margin: 16px 0;
+}
+
+.cast-short{
+    height: 100%;
+}
+#short-cast{
+    font-weight: 600;
+}
+
+.film-logo{
+    display: none;
+
+}
+
+
+#media-backdrop img{
+    width: 100%;
+    height:100;
+}
+
+/* film - logo 2  for bigger screens */ 
+
+.film-logo2{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+
+}
+
+
+
+.film-logo2 img{
+    max-width: 30%;
+    height: auto;
+    
+}
+
+#movie-logo-smallscreen{
+    margin: 10px 0;
+    display: none;
+
+}
+#movie-logo-smallscreen img{
+        max-width: 150px;
+}
+
+.tv-show-detail-content {
+    height: auto;
+    position: relative;
+    height: auto;
+}
+
+
+
+/* REALIGN THE MOVIE DETAILS WHEN SCREEN IS SMALLER THAN 725PX */
+
+@media (max-width: 735px) {
+
+    
+
+    .media-detail-holder{
+        height: 65vh;
+    }
+
+    .media-detail-content{
+        height: 100%;
+    }
+    #media-backdrop {
+        height: 100%; /* Full height of the container or set specific dimensions */
+        position: relative; /* Ensure positioning context if needed */
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    
+    #backdrop-img {
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* or 'contain' based on your needs */
+        overflow-x: hidden;
+        align-items: center;
+        position: absolute;
+        right:0%;
+
+    }
+
+    #media-backdrop img{
+        width: auto;
+        height: 100%;
+    }
+    
+    
+    .media-content-details p{
+        overflow: hidden;             
+        text-overflow: ellipsis;      
+        display: -webkit-box;         
+        -webkit-box-orient: vertical; 
+        -webkit-line-clamp: 1;        
+        line-height: 1;             
+        box-sizing: border-box;
+        padding: 0 30px;
+        justify-content: center;
+    }
+    .media-header-content-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0 4%;
+        gap: 3%;
+        align-items: center;
+        position: absolute;
+        bottom: 0%;
+        backdrop-filter: none;
+        box-sizing: border-box;
+        padding: 20px 0;
+    
+    }
+    #movie-genre{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 70%;
+
+    }
+    .media-display-container{
+    display: flex;
+    position: relative;
+    height: auto;
+    overflow-x:hidden;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    overflow-y: scroll;
+    }
+    
+    .media-display-container img{
+        width: 100%;
+        height: auto;
+    
+    
+    }
+    
+    .media-detail-buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        flex-direction: column;
+        gap: 6px;
+        width: 100%;
+    }
+    
+    .play-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+        text-align: center;
+    
+    }
+    
+    #film-title{
+        position: absolute;
+    }
+    
+    
+    /* CAST ACTOR NAME B0X  */
+    .movie-cast{
+        display: none;
+        flex-direction: column;
+        gap: 0px;
+        font-weight: 100;
+        justify-content: start;
+        height: 100%;
+        box-sizing: border-box;
+        padding-top: 16px;
+    }
+    
+    .movie-cast h6{
+        margin: 0;
+    }
+
+    .film-logo {
+        width: 100%; /* Adjust width as needed */
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 10px 0;
+        display: block;
+    }
+    
+    .film-logo img {
+        width: 30%; /* Adjust width as needed */
+        height: auto; /* Keeps the image's aspect ratio */
+    }
+
+    #Mlogo-placement{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+    /* FILM LOGO 2 TO DISSAPEAR*/
+
+    .film-logo2{
+        position: absolute;
+        top: 0%;
+        left: 0;
+        bottom: 20;
+        display: none;
+    
+    }
+    
+    
+    
+    .film-logo2 img{
+        width: 30%;
+        
+    }
+
+    .cast-short{
+        display: none;
+    }
+    
+    #movie-logo-smallscreen{
+        margin: 10px 0;
+        display: block;
+    
+    }
+    #movie-logo-smallscreen img{
+            max-width: 150px;
+    }
+
+    .tv-show-detail-content {
+        height: auto;
+        position: relative;
+        height: 65vh;
+    }
+}
+
+
+
+
+/* trailer frame size*/
+
+/* hide the frame*/
+/* Ensure the trailer-div takes up the whole screen */
+.trailer-div {
+    position: fixed; /* Position it relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background with some transparency */
+    z-index: 1000; /* Make sure it's on top of all other elements */
+    display: none; /* Hide it by default */
+    justify-content: center; /* Center the iframe horizontally */
+    align-items: center; /* Center the iframe vertically */
+}
+
+/* Style the iframe to take up most of the screen */
+.trailer-window {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Optionally, add a close button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* RELATED MOVIES*/
+/* Container for related movies */
+.related-movies {
+    color: black;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+/* Each related movie item */
+.related-movie-item {
+    position: relative;
+    height: fit-content;
+    cursor: pointer;
+}
+
+/* List container for related movie items */
+.related-movie-list {
+    display: flex;
+    gap: 30px;
+    overflow-x: scroll;
+    box-sizing: border-box;
+    height: fit-content;
+    scroll-behavior: smooth;
+    color: black;
+    overflow-y: hidden;
+}
+
+.movie-backdrop-container{
+    position: relative; /* Make this container the positioning context */
+    width: 100%; /* Ensure the backdrop image fills the container */
+}
+
+/* Backdrop image style */
+.movie-backdrop-container img.related-movie-backdrop {
+    border-radius: 7px;
+    width: 300px;
+    height: auto;
+    box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.151);
+    position: relative;
+}
+
+/* Logo image style */
+.movie-logo-container img.related-movie-logo {
+    width: 130px; 
+    height: auto;
+    border-radius: 5px; 
+    align-items: center;
+    position: absolute;
+    bottom: 8px;
+}
+
+.movie-logo-container{
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+}
+
+.movie-logobackdrop-container{
+    position: relative;
+}
+
+
+
+
+/* cast and crew list */
+
+.cast-and-crew{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 20px;
+    color: black;
+    height: fit-content;
+}
+
+
+.cast-and-crew-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Optional: add space between images */
+    overflow-x: scroll;
+    overflow-y: scroll;
+    padding-bottom: 70px;
+}
+
+.actor-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.actor-profile-pic {
+    width: 90px; /* Set the width */
+    height: 90px; /* Set the height */
+    border-radius: 50%; /* Make the container circular */
+    object-fit: cover; /* Ensure the image covers the circle without distortion */
+    overflow: hidden; /* Hide overflow if image is larger */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.actor-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    color: #1e1e1e;
+    margin-top: 8px;
+}
+
+.actor-name p{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#actor-name-alt{
+    color: #b6b6b6;
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+}
+
+
+/* POPULAR TV SHOWS */
+#trending-tv-shows{
+    border-bottom: .5px solid white;
+    padding: 0 1.5%;
+    color: black;
+}
+
+.trending-tv-show-list{
+    display: flex;
+    gap: 30px;
+    overflow-x: scroll;
+    box-sizing: border-box;
+    height: auto;
+    scroll-behavior: smooth;
+}
+
+.trending-tv-show-backdrop{
+    border-radius: 7px;
+    width: 300px;
+    height: 172px;
+    box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.151);
+    overflow: hidden;
+    position: relative;
+}
+
+#tvshow-backdrop{
+    width: 300px;
+    height: 172px;
+}
+
+
+.tv-show-item {
+height: auto;
+cursor: pointer;
+    
+}
+
+.tv-show-backdrop{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+
+}
+
+
+.tv-show-logo{
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+
+}
+
+
+.tv-show-logo img{
+    width: 130px; 
+    height: auto;
+    border-radius: 5px; 
+    align-items: center;
+    position: absolute;
+    bottom: 8px;
+
+}
+
+
+#seasons-dropdown {
+    color: rgb(0, 0, 0); /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Round the corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+    align-items: center;
+    display: flex;
+}
+.seasons-menu{
+    padding: 0 20px;
+}
+
+#seasons-dropdown{
+    font-size: larger;
+}
+
+
+.tv-show-detail-holder{
+    height: auto;
+}
+
+.seasons-list{ 
+    max-height: 100px;
+    overflow-y: auto;
+    margin: 0;
+    list-style: none;
+    border: 1px rgb(220, 220, 220) solid;
+    border-radius: 6px;
+    width: 100px;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    background-color: white;
+}
+
+.seasons-list li{
+    width: 100%;
+}
+
+.season-button{
+    width: 100%;
+}
+
+.season-button:hover{
+    background-color: #e5e5e5;
+}
+
+/* TV SHOW EPISODES */
+
+.episodes-container{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    overflow-x: scroll;
+    padding: 0 20px;
+    overflow-y: hidden;
+    padding-bottom: 30px;
+    height: 40%;
+}
+
+.episode-item{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 300px;
+}
+
+
+.episode-backdrop{
+    width: 300px;
+    height: 172px;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.153) 3px 4px 8px;
+}
+
+.episode-backdrop:hover{
+    cursor: pointer;
+    opacity: 30%;
+    width: 300px;
+    height: 172px;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.153) 3px 4px 8px;
+}
+
+.episode-backdrop img{
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+}
+
+.episode-item h6{
+    margin: 3px;
+    color: #4a4a4a;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.episode-item p{
+    margin: 5px ;
+    color: #9c9c9c;
+    font-weight: 200;
+    height: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.episode-description{
+    height: 100%;
+}
+
+
+/* Media Player */ 
+.player {
+    display: none; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); 
+    z-index: 1000;
+}
+
+#media-player {
+    width: 100%;
+    height: 100%;
+}
+
+.media-closer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #fff1f1;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: red;
+}
+
+
+#player-container{
+    display: none;
+}
+
+/* HERE IS WHERE I WILL PUT ALL OF THE TOP RATED MOVIES */
+
+.movie-item{
+    height: auto;
+    cursor: pointer;
+}
+
+.top-rated-movies{
+    border-bottom: .5px solid white;
+    padding: 0 1.5%;
+    color: black;
+}
+
+.top-rated-movie-list{
+    display: flex;
+    gap: 30px;
+    overflow-x: scroll;
+    box-sizing: border-box;
+    height: auto;
+    scroll-behavior: smooth;
+}
+
+.top-rated-movies-backdrop{
+    border-radius: 7px;
+    width: 300px;
+    height: 172px;
+    box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.151);
+    overflow: hidden;
+    position: relative;
+}
+
+.backdrop-image img{
+    border-radius: 7px;
+    width: 300px;
+    height: 172px;
+    box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.151);
+    overflow: hidden;
+    position: relative;
+}
+
+.backdrop-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.top-rated-movies-logos{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+}
+
+.top-rated-movies-logos img{
+    width: 130px;
+    height: auto;
+    border-radius: 5px;
+    align-items: center;
+    position: absolute;
+    bottom: 8px;
+}
+
+
+
+
+/*THIS IS FOR SEARCH RESULTS*/
+.search-results{
+    width: 100%;
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
+    gap: 1%;
+    color: #000000;
+    align-content: center; /* Center the whole grid's content vertically */
+    justify-content: center; /* Center grid items horizontally */
+    justify-items: center; /* Align items in the center of each grid cell */
+}
+
+/*BLOCK BUSTER MOVIES*/
+
+.blockbuster-movies{
+    border-bottom: .5px solid white;
+    padding: 0 1.5%;
+    color: black;
+}
+
+
+.blockbuster-movie-list{
+    display: flex;
+    gap: 30px;
+    overflow-x: scroll;
+    box-sizing: border-box;
+    height: auto;
+    scroll-behavior: smooth;
+}
+
+.trending-animes{
+    color: black;
+    padding:  0 1.5%;
+}

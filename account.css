@@ -1,0 +1,292 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family:Helvetica, sans-serif;
+    color:#323232;
+    background-color: #ffffff;
+}
+
+h1{
+    font-weight: 500;
+}
+
+@media (min-width: 800px) {
+    .body{
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+}
+
+
+/* Original layout for larger screens */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #000000;
+    background: rgb(3, 3, 3);
+    backdrop-filter: blur(40px);
+    padding-bottom: 10px;
+    height: 35px;
+    color: rgb(125, 125, 125);
+    gap: 6px;
+    position: fixed;
+    width: 100vw;
+    padding-top: 5px;
+    z-index: 1000;
+    padding-left: 4px;
+}
+
+.applogo {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#home-button {
+    background: none;
+    border: none;
+    color: #c6c6c6;
+    font-weight: 500;
+    font-size: x-large;
+}
+
+.profile-icon {
+    padding-left: 20px;
+    padding-right: 20px;
+    background: none;
+    border: none;
+    color: #c6c6c6;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.search-container {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    
+}
+
+.hamburger-menu{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: 30px;
+    flex: 1; 
+}
+
+
+#search-bar-input {
+    flex: 1; 
+    min-width: 180px; 
+    height: 100%;
+    background-color: #8d8d8d1c;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+@media (max-width: 670px) {
+    .navbar {
+        flex-direction: row; 
+        align-items: center; 
+        padding-top: 10px;
+        padding-bottom: 6px;
+        justify-content: space-between;
+        height: 45px;
+        background: rgb(0, 0, 0);
+        backdrop-filter: blur(80px);
+    }
+
+    .search-container {
+        width: 100%; 
+        margin: 10px 0; 
+    }
+
+
+    .search-bar {
+        width: 100%; 
+        max-width: 100%; 
+        margin: 0 20px; 
+    }
+
+    #search-bar-input {
+        min-width: 100%; 
+        max-width: 100%; 
+        font-size: 16px;
+    }
+
+    #app-logo{
+        display: none;
+    }
+    
+}
+
+
+
+/* Main Menu Left side */
+
+.main-menu {
+    height: 100%;
+    width: 230px;
+    min-width: 220px;
+    top: 51px; 
+    left: 0; 
+    z-index: 900; 
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    background-color: black; /* Overridden by previous line */
+    border-right: 1px black solid;
+    position: fixed;
+}
+
+.nav--buttons{
+    width: 88%;
+    min-width: 50px;
+    height: 30px;
+    background: none;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 300;
+    display: flex;
+    gap: 7px;
+}
+
+.nav--buttons:hover{
+    background-color: rgba(246, 246, 246, 0.081);
+}
+
+
+.hamburger-menu {
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+
+.hamburger-menu .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #c6c6c6;
+    margin: 3px 0;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+/* accounts related stuff*/
+
+.account-mains-wrapper{
+    vertical-align: middle;
+    position: absolute;
+    width: 100%;
+    top: 30%;
+}
+
+
+
+.account-mains{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    align-content: center;
+    width: 100vw;
+    
+}
+#logout-button{
+    background: rgb(22, 22, 22);
+    padding: 13px;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+}
+
+#logout-button:hover{
+    background-color: #323232;
+}
+
+@media (max-width: 800px) {
+    .nav--buttons {
+        display: flex; 
+    }
+    .hamburger-menu {
+        display: flex; 
+    }
+    .main-menu {
+        display: none;  /* Hide the main menu */
+        width: 100%;        /* Collapse the width */
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .main-menu.active{
+        display: flex;
+    }
+
+    .right-container {
+        width: 100%;     /* Take up the full width */
+        position: relative;
+        overflow-x: hidden;
+        background-color: #ffffff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow-y: scroll;
+        margin-left: 0;   /* Remove the left margin */
+    }
+
+
+    #app-logo{
+        display: none;
+    }
+
+    .search-container {
+        width: 80%; 
+        margin: 10px 0; 
+    }
+
+
+    .search-bar {
+        width: 80%; 
+        max-width: 100%; 
+        margin: 0 20px; 
+    }
+
+    #search-bar-input {
+        min-width: 100%; 
+        max-width: 100%; 
+        font-size: 16px;
+    }
+}
